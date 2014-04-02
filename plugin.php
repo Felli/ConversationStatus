@@ -35,16 +35,6 @@ class ETPlugin_ConversationStatus extends ETPlugin {
 		ETConversationModel::addLabel("nobug", "IF(c.status = 6,1,0)","icon-thumbs-up");
 		ETConversationModel::addLabel("highpriority", "IF(c.status = 7,1,0)","icon-circle");
 		ETConversationModel::addLabel("lowpriority", "IF(c.status = 8,1,0)","icon-circle-blank");
-
-		/*ET::define("label.none", "");
-		ET::define("label.added", "Lisatud");
-		ET::define("label.considered", "Kaalumisel");
-		ET::define("label.rejected", "Mõtetu");
-		ET::define("label.fixed", "Korras");
-		ET::define("label.inprogress", "Töös");
-		ET::define("label.notbug", "Parandatud");
-		ET::define("label.highpriority", "Väga tähtis");
-		ET::define("label.lowpriority", "Oluline");*/
 	}
 
 	public function handler_renderBefore($sender) {
@@ -94,9 +84,6 @@ class ETPlugin_ConversationStatus extends ETPlugin {
 									<i class='icon-". $status_icons[$i] ."'></i> 
 									<span>". $status[$i] . "</span>
 								</a></li>";
-				//if($status_seperators[$i] === true) {
-				//	$controls = $controls . "<li class='sep'></li>";	
-				//}
 			}
 			echo $controls . "</ul>";
 		} else {
