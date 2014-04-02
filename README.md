@@ -18,3 +18,5 @@ Chown the Conversation Status plugin folder to the right web user:
 ```
 chown -R apache:apache ConversationStatus/
 ```
+
+Note that this will not work on esoTalk 1.0.0g4 and above
