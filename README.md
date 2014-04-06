@@ -1,6 +1,8 @@
 ## esoTalk – Conversation Status plugin
 
-- Allow those who can moderate to set a status to conversations.
+Allows those who can moderate to set a status to conversations.
+This is a shabby, bloated (that what it could of been) plugin - but it gets the job done! 
+
 
 ### Installation
 
@@ -19,4 +21,3 @@ Chown the Conversation Status plugin folder to the right web user:
 chown -R apache:apache ConversationStatus/
 ```
 
-Note that this plugin will not work on esoTalk 1.0.0g4 and above
