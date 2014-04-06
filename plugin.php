@@ -10,7 +10,7 @@ ET::$pluginInfo["Statuses"] = array(
 	"version" => "0.6",
 	"author" => "Shaun Merchant",
 	"authorEmail" => "shaun@gravitygrip.co.uk",
-	"authorURL" => "http://www.gravitygrip.co.uk/“,
+	"authorURL" => "http://www.gravitygrip.co.uk/",
 	"license" => "GPLv2"
 );
 
