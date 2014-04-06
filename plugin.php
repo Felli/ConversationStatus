@@ -7,7 +7,7 @@ if (!defined("IN_ESOTALK")) exit;
 ET::$pluginInfo["Statuses"] = array(
 	"name" => "Conversation Statuses",
 	"description" => "Allow those who can moderate to set a status to conversations.",
-	"version" => “0.6”,
+	"version" => "0.6",
 	"author" => "Shaun Merchant",
 	"authorEmail" => "shaun@gravitygrip.co.uk",
 	"authorURL" => "http://www.gravitygrip.co.uk/“,
