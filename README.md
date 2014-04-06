@@ -1,7 +1,8 @@
 ## esoTalk – Conversation Status plugin
 
 Allows those who can moderate to set a status to conversations.
-This is a shabby, bloated (that what it could of been) plugin - but it gets the job done! 
+
+This is a shabby, bloated (than what it could have been) plugin - but it gets the job done! 
 
 
 ### Installation
