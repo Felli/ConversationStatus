@@ -6,7 +6,7 @@ if (!defined("IN_ESOTALK")) exit;
 ET::$pluginInfo["ConversationStatus"] = array(
 	"name" => "Conversation Status",
 	"description" => "Allow those who can moderate to set a status to conversations.",
-	"version" => "0.5",
+	"version" => "0.5.1",
 	"author" => "Shaun Merchant",
 	"authorEmail" => "shaun@gravitygrip.co.uk ",
 	"authorURL" => "http://www.gravitygrip.co.uk/",
@@ -35,6 +35,16 @@ class ETPlugin_ConversationStatus extends ETPlugin {
 		ETConversationModel::addLabel("nobug", "IF(c.status = 6,1,0)","icon-thumbs-up");
 		ETConversationModel::addLabel("highpriority", "IF(c.status = 7,1,0)","icon-circle");
 		ETConversationModel::addLabel("lowpriority", "IF(c.status = 8,1,0)","icon-circle-blank");
+		
+		ET::define("label.none", "No Status");
+		ET::define("label.added", "Added");
+		ET::define("label.considered", "Considered");
+		ET::define("label.rejected", "Rejected");
+		ET::define("label.fixed", "Fixed");
+		ET::define("label.inprogress", "In Progress");
+		ET::define("label.nobug", "Not a Bug");
+		ET::define("label.highpriority", "High Priority");
+		ET::define("label.lowpriority", "Low Priority");
 	}
 
 	public function handler_renderBefore($sender) {
