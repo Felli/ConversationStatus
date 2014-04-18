@@ -13,8 +13,8 @@ ET::$pluginInfo["ConversationStatus"] = array(
 	"license" => "GPLv2"
 );
 
-class ETPlugin_ConversationStatus extends ETPlugin {	
-	
+class ETPlugin_ConversationStatus extends ETPlugin {
+
 	public function setup($oldVersion = "") {
 		$structure = ET::$database->structure();
 		$structure->table("conversation")
@@ -35,7 +35,7 @@ class ETPlugin_ConversationStatus extends ETPlugin {
 		ETConversationModel::addLabel("nobug", "IF(c.status = 6,1,0)","icon-thumbs-up");
 		ETConversationModel::addLabel("highpriority", "IF(c.status = 7,1,0)","icon-circle");
 		ETConversationModel::addLabel("lowpriority", "IF(c.status = 8,1,0)","icon-circle-blank");
-		
+
 		ET::define("label.none", "No Status");
 		ET::define("label.added", "Added");
 		ET::define("label.considered", "Considered");
@@ -52,7 +52,7 @@ class ETPlugin_ConversationStatus extends ETPlugin {
 		$sender->addJSFile($this->getResource("status.js"));
 		$sender->addJSLanguage("Status");
 	}
-	
+
 	public function handler_conversationController_renderScrubberBefore($sender, $data) {
 		if(!ET::$session->user) return;
 		if($data["conversation"]["canModerate"]) {
@@ -91,21 +91,21 @@ class ETPlugin_ConversationStatus extends ETPlugin {
 											"&token=". ET::$session->token .
 											"&return=". urlencode(ET::$controller->selfURL)) .
 											"' title='". T($status[$i]) ."'>
-									<i class='icon-". $status_icons[$i] ."'></i> 
+									<i class='icon-". $status_icons[$i] ."'></i>
 									<span>". $status[$i] . "</span>
 								</a></li>";
 			}
 			echo $controls . "</ul>";
 		} else {
-			return;	
+			return;
 		}
 	}
-	
+
 	public function conversationController_status($sender, $conversationId) {
 		if (!$sender->validateToken()) return;
-	
+
 		$conversation = ET::conversationModel()->getById((int)$conversationId);
-														  
+
 		if(!$conversation || !$conversation["canModerate"]) {
 			$sender->renderMessage(T("Error"), T("message.noPermission"));
 			return false;
