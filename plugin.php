@@ -47,7 +47,7 @@ class ETPlugin_ConversationStatus extends ETPlugin {
 		ET::define("label.lowpriority", "Low Priority");
 	}
 
-	public function handler_renderBefore($sender) {
+	public function handler_conversationController_renderBefore($sender) {
 		$sender->addCSSFile($this->getResource("status.css"));
 		$sender->addJSFile($this->getResource("status.js"));
 		$sender->addJSLanguage("Status");
