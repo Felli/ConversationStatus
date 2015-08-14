@@ -48,8 +48,8 @@ class ETPlugin_ConversationStatus extends ETPlugin {
 	}
 
 	public function handler_conversationController_renderBefore($sender) {
-		$sender->addCSSFile($this->getResource("status.css"));
-		$sender->addJSFile($this->getResource("status.js"));
+		$sender->addCSSFile($this->resource("status.css"));
+		$sender->addJSFile($this->resource("status.js"));
 		$sender->addJSLanguage("Status");
 	}
 
@@ -65,7 +65,7 @@ class ETPlugin_ConversationStatus extends ETPlugin {
 				5 => T("In Progress"),
 				6 => T("No Bug"),
 				7 => T("High Priority"),
-				8 => T("Low Priorty")
+				8 => T("Low Priority")
 			);
 			$status_icons = array(
 				0 => "warning-sign",
